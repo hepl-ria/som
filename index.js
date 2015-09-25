@@ -10,7 +10,7 @@ var chalk = require( "chalk" ),
     path = require( "path" ),
     fs = require( "fs" ),
     humanSize = require( "human-size" ),
-    crc32 = require( "easy-crc32" ).calculate;
+    sha1 = require( "sha1" );
 
 var sFileName, sFilePath;
 
@@ -37,10 +37,13 @@ fs.stat( sFilePath, function( oError, oStats ) {
     }
 
     // name
-    aLogLines.push( chalk.yellow.bold( sFileName ) );
+    aLogLines.push( chalk.yellow( "FileName : " ) + sFileName + '\r\n' );
+
+    // Location
+    aLogLines.push( chalk.yellow( "Location : " ) + sFilePath + '\r\n' );
 
     // size
-    aLogLines.push( chalk.gray( "(" + humanSize( oStats.size ) + ")" ) );
+    aLogLines.push( chalk.yellow( "Size : " ) + "(" + humanSize( oStats.size ) + ")"  + '\r\n'  );
 
     // checksum
     fs.readFile( sFilePath, { "encoding": "utf-8" }, function( oError, sData ) {
@@ -48,7 +51,7 @@ fs.stat( sFilePath, function( oError, oStats ) {
             fShowError( oError );
         }
 
-        aLogLines.push( chalk.green.bold( "sum:" ) + " " + crc32( sData ) );
+        aLogLines.push( chalk.yellow( "Checksum : " ) + " " + sha1( sData ) );
 
         console.log( aLogLines.join( " " ) );
     } );
