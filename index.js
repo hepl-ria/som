@@ -10,7 +10,7 @@ var chalk       = require( "chalk" ),
     path        = require( "path" ),
     fs          = require( "fs" ),
     humanSize   = require( "human-size" ),
-    md5       = require( "md5" );
+    md5         = require( "md5" );
 
 var sFileName, sFilePath;
 
