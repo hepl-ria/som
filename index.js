@@ -10,7 +10,8 @@ var chalk = require( "chalk" ),
     path = require( "path" ),
     fs = require( "fs" ),
     humanSize = require( "human-size" ),
-    crc32 = require( "easy-crc32" ).calculate;
+    crc32 = require( "easy-crc32" ).calculate,
+    sha1 = require("js-sha1");
 
 var sFileName, sFilePath;
 
@@ -47,8 +48,10 @@ fs.stat( sFilePath, function( oError, oStats ) {
         if( oError ) {
             fShowError( oError );
         }
-
-        aLogLines.push( chalk.green.bold( "sum:" ) + " " + crc32( sData ) );
+        //checksum in crc32
+        aLogLines.push( chalk.green.bold( "sum crc32:" ) + " " + crc32( sData ) );
+        //checksum in sha1
+        aLogLines.push(chalk.cyan.bold( "sum sha1:" ) + " " + sha1( sData ) )
 
         console.log( aLogLines.join( " " ) );
     } );
