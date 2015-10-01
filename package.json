@@ -24,7 +24,7 @@
   "main": "index.js",
   "dependencies": {
     "chalk": "^1.1.1",
-    "easy-crc32": "0.0.2",
+    "sha1": "^1.1.1",
     "human-size": "^1.1.0"
   }
 }
