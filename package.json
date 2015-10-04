@@ -9,22 +9,25 @@
     "checksum"
   ],
   "author": {
-    "name": "leny",
-    "email": "info@flatland.be"
+    "name": "SwithFr",
+    "email": "contact@swith.fr"
   },
-  "homepage": "https://github.com/hepl-ria/som#readme",
+  "homepage": "https://github.com/SwithFr/som",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hepl-ria/som.git"
+    "url": "https://github.com/SwithFr/som.git"
   },
   "bugs": {
-    "url": "https://github.com/hepl-ria/som/issues"
+    "url": "https://github.com/SwithFr/som/issues"
   },
   "license": "WTFPL",
   "main": "index.js",
   "dependencies": {
     "chalk": "^1.1.1",
-    "easy-crc32": "0.0.2",
-    "human-size": "^1.1.0"
+    "human-size": "^1.1.0",
+    "sha1": "^1.1.1"
+},
+  "bin": {
+    "som": "index.js"
   }
 }
