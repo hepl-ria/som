@@ -10,7 +10,7 @@ var chalk = require( "chalk" ),
     path = require( "path" ),
     fs = require( "fs" ),
     humanSize = require( "human-size" ),
-    crc32 = require( "easy-crc32" ).calculate;
+    md5 = require('md5');
 
 var sFileName, sFilePath;
 
@@ -37,7 +37,7 @@ fs.stat( sFilePath, function( oError, oStats ) {
     }
 
     // name
-    aLogLines.push( chalk.yellow.bold( sFileName ) );
+    aLogLines.push( chalk.blue.bold( sFileName ) );
 
     // size
     aLogLines.push( chalk.gray( "(" + humanSize( oStats.size ) + ")" ) );
@@ -48,7 +48,7 @@ fs.stat( sFilePath, function( oError, oStats ) {
             fShowError( oError );
         }
 
-        aLogLines.push( chalk.green.bold( "sum:" ) + " " + crc32( sData ) );
+        aLogLines.push( chalk.blue.bold( "sum:" ) + " " + md5( sData ) );
 
         console.log( aLogLines.join( " " ) );
     } );
