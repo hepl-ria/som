@@ -10,6 +10,7 @@ var chalk = require( "chalk" ),
     path = require( "path" ),
     fs = require( "fs" ),
     humanSize = require( "human-size" ),
+    // require Sha1 instead of crc32
     sha1 = require( "sha1" );
 
 var sFileName, sFilePath;
@@ -40,6 +41,7 @@ fs.stat( sFilePath, function( oError, oStats ) {
     aLogLines.push( chalk.yellow( "FileName : " ) + sFileName + '\r\n' );
 
     // Location
+    // Dislay location too
     aLogLines.push( chalk.yellow( "Location : " ) + sFilePath + '\r\n' );
 
     // size
@@ -51,6 +53,7 @@ fs.stat( sFilePath, function( oError, oStats ) {
             fShowError( oError );
         }
 
+        // off course change crc32 by sha1 here too
         aLogLines.push( chalk.yellow( "Checksum : " ) + " " + sha1( sData ) );
 
         console.log( aLogLines.join( " " ) );
