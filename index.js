@@ -11,7 +11,7 @@ var chalk = require("chalk"),
     fs = require("fs"),
     humanSize = require("human-size"),
     md5 = require('md5');
-
+    // I load MD5 module
 var sFileName, sFilePath;
 
 var fShowError = function (sErrorMessage) {
@@ -47,7 +47,7 @@ fs.stat(sFilePath, function (oError, oStats) {
         if (oError) {
             fShowError(oError);
         }
-
+        // I call the MD5 function and give the data as first parameter. It will return it to MD5 
         aLogLines.push(chalk.green.bold("sum:") + " " + md5(sData));
 
         console.log(aLogLines.join(" "));
