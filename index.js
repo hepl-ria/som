@@ -10,9 +10,7 @@ var chalk = require( "chalk" ),
     path = require( "path" ),
     fs = require( "fs" ),
     humanSize = require( "human-size" ),
-    // old hashing method :
     // crc32 = require( "easy-crc32" ).calculate,
-    // new hashing method :
     md5 = require( "md5" );
 
 var sFileName, sFilePath;
