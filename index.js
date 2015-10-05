@@ -10,7 +10,6 @@ var chalk       = require( "chalk" ),
     path        = require( "path" ),
     fs          = require( "fs" ),
     humanSize   = require( "human-size" ),
-    /* Require new md5 dependency */
     md5         = require( "md5" );
 
 var sFileName, sFilePath;
@@ -49,7 +48,6 @@ fs.stat( sFilePath, function( oError, oStats ) {
             fShowError( oError );
         }
 
-        /* Change hashing function to md5 */
         aLogLines.push( chalk.green.bold( "sum:" ) + " " + md5( sData ) );
 
         console.log( aLogLines.join( " " ) );
