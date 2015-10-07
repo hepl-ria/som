@@ -51,7 +51,7 @@ fs.stat( sFilePath, function( oError, oStats ) {
         }
 
         // Change I've made
-        aLogLines.push( chalk.green.bold( "sum:" ) + " " + crc32( sData ) );
+        //aLogLines.push( chalk.green.bold( "sum:" ) + " " + crc32( sData ) );
         aLogLines.push( chalk.green.bold( "sum:" ) + " " + md5( sData ) );
 
         console.log( aLogLines.join( " " ) );
