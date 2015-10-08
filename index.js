@@ -5,12 +5,12 @@
  */
 
 "use strict";
-
-var chalk = require( "chalk" ),
-    path = require( "path" ),
-    fs = require( "fs" ),
-    humanSize = require( "human-size" ),
-    sha1 = require( "sha1" );
+//Removes node_modules
+// var chalk = require( "chalk" ),
+//     path = require( "path" ),
+//     fs = require( "fs" ),
+//     humanSize = require( "human-size" ),
+//     sha1 = require( "sha1" );
 var sFileName, sFilePath;
 
 var fShowError = function( sErrorMessage ) {
