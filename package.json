@@ -1,6 +1,6 @@
 {
   "name": "som",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "private": true,
   "description": "Compute checksum of a file.",
   "keywords": [
@@ -9,8 +9,8 @@
     "checksum"
   ],
   "author": {
-    "name": "leny",
-    "email": "info@flatland.be"
+    "name": "aure",
+    "email": "aurelie.mairesse@student.hepl.be"
   },
   "homepage": "https://github.com/hepl-ria/som#readme",
   "repository": {
@@ -24,7 +24,7 @@
   "main": "index.js",
   "dependencies": {
     "chalk": "^1.1.1",
-    "easy-crc32": "0.0.2",
+    "md5": "^2.0.0",
     "human-size": "^1.1.0"
   }
 }
