@@ -1,8 +1,8 @@
-/* sòm
- * Compute checksum of a file.
- *
- * started at 25/09/2015
- */
+/* Homework
+* Compute checksum of a file.
+*
+* started at 1/10/15
+*/
 
 "use strict";
 
@@ -10,12 +10,12 @@ var chalk = require( "chalk" ),
     path = require( "path" ),
     fs = require( "fs" ),
     humanSize = require( "human-size" ),
-    crc32 = require( "easy-crc32" ).calculate;
+    md5 = require( "md5" );
 
 var sFileName, sFilePath;
 
-var fShowError = function( sErrorMessage ) {
-    console.log( chalk.red.bold.underline( "✘ error:" ), sErrorMessage );
+var fShowError = function( sErrorMessage ) {
+    console.log( chalk.red.bold.underline( "x error:" ), sErrorMessage );
     process.exit( 1 );
 };
 
@@ -48,7 +48,7 @@ fs.stat( sFilePath, function( oError, oStats ) {
             fShowError( oError );
         }
 
-        aLogLines.push( chalk.green.bold( "sum:" ) + " " + crc32( sData ) );
+        aLogLines.push( chalk.green.bold( "sum:" ) + " " + md5( sData ) );
 
         console.log( aLogLines.join( " " ) );
     } );
